@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astorre - Coming Soon</title>
+    <!-- Use Tailwind CSS for rapid styling and responsiveness -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /*
+        * The user specified a corporate blue from Figma.
+        * Please replace the value below with the exact HEX code.
+        */
+        :root {
+            --astorre-blue: #1E40AF; /* A corporate blue placeholder */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .bg-astorre-blue {
+            background-color: var(--astorre-blue);
+        }
+
+        /* Animation for the logo */
+        @keyframes pulse-logo {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .animate-pulse-logo {
+            animation: pulse-logo 2s infinite ease-in-out;
+        }
+        
+        /* Animated background "digital grid" */
+        .animated-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -10;
+        }
+
+        .animated-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.1), transparent),
+                        radial-gradient(circle at 90% 90%, rgba(255, 255, 255, 0.1), transparent),
+                        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05), transparent),
+                        radial-gradient(circle at 25% 75%, rgba(255, 255, 255, 0.1), transparent);
+            background-size: 200% 200%;
+            animation: move-background 15s linear infinite;
+        }
+
+        @keyframes move-background {
+            from {
+                background-position: 0% 0%;
+            }
+            to {
+                background-position: 200% 200%;
+            }
+        }
+    </style>
+</head>
+<body class="bg-astorre-blue text-white min-h-screen flex flex-col items-center">
+
+    <!-- Animated background container -->
+    <div class="animated-background"></div>
+
+    <!-- Main content container, centered and responsive -->
+    <main class="flex-grow flex flex-col items-center justify-center text-center max-w-2xl w-full relative z-10 p-4 sm:p-8">
+        <!-- 
+        * Logo Placeholder with the added animation class
+        * Replace this with your company logo image or SVG
+        -->
+        <div class="mb-8 w-[166px] h-[30px] mx-auto flex items-center justify-center">
+    <img src="image.png" alt="Astorre Logo" class="w-full h-full object-contain animate-pulse-logo" />
+</div>
+
+        <!-- Text content and form -->
+        <div class="space-y-4 sm:space-y-6">
+            <h2 class="text-xl sm:text-2xl font-semibold leading-tight">
+                From delivery to shelf — fully aligned by AI.
+            </h2>
+            <p class="text-sm sm:text-base opacity-80">
+                Astorre combines predictive staffing, AI task orchestration, piece-rate pay, and real-time monitoring into one operational layer — giving UK retailers visibility, control, and consistently full shelves.
+            </p>
+
+            <!-- "Coming Soon" text without the box -->
+            <p class="text-xl sm:text-3xl font-semibold text-white opacity-0 transition-opacity duration-1000 mt-12" id="coming-soon-text">
+                Our full website is coming soon.
+            </p>
+
+            <!-- Contact Form -->
+            <div class="mt-8 pt-4 border-t border-white border-opacity-30">
+                <p class="text-sm font-light mb-2">Contact us</p>
+                <form id="contactForm" class="flex flex-col sm:flex-row items-center justify-center gap-2">
+                    <input type="email" id="emailInput" placeholder="Enter your email" required
+                        class="w-full sm:w-64 px-4 py-2 text-gray-900 placeholder-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-astorre-blue transition-all duration-300">
+                    <button type="submit"
+                        class="w-full sm:w-auto px-6 py-2 bg-astorre-blue text-white font-semibold rounded-md border border-white/20 hover:scale-105 hover:border-white focus:outline-none focus:ring-2 focus:ring-white transition-all duration-300">
+                        Notify Me
+                    </button>
+                </form>
+                <a href="mailto:m.shulga@astorre.tech" class="block mt-2 text-sm underline opacity-80 hover:opacity-100 transition-opacity duration-300">
+                    m.shulga@astorre.tech
+                </a>
+                <p id="messageBox" class="mt-4 text-green-300 font-medium hidden">Thank you! We'll be in touch soon.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto text-center text-sm opacity-60">
+        &copy; 2025 Astorre. All rights reserved.
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents default form submission
+            const emailInput = document.getElementById('emailInput');
+            const messageBox = document.getElementById('messageBox');
+            
+            if (emailInput.value) {
+                // In a production environment, you would send this data to a server.
+                // For this placeholder, we'll just show a success message.
+                console.log('User submitted email:', emailInput.value);
+                
+                // Show the success message and clear the input
+                messageBox.classList.remove('hidden');
+                emailInput.value = '';
+                
+                // Hide the message after a few seconds
+                setTimeout(() => {
+                    messageBox.classList.add('hidden');
+                }, 5000);
+            }
+        });
+        
+        // Fades in the "Coming Soon" text on page load
+        window.onload = function() {
+            const comingSoonText = document.getElementById('coming-soon-text');
+            setTimeout(() => {
+                comingSoonText.classList.remove('opacity-0');
+            }, 500); // 500ms delay
+        }
+    </script>
+</body>
+</html>
