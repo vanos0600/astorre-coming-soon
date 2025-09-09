@@ -38,54 +38,16 @@
         .animate-pulse-logo {
             animation: pulse-logo 2s infinite ease-in-out;
         }
-        
-        /* Animated background "digital grid" */
-        .animated-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -10;
-        }
-
-        .animated-background::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.1), transparent),
-                        radial-gradient(circle at 90% 90%, rgba(255, 255, 255, 0.1), transparent),
-                        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05), transparent),
-                        radial-gradient(circle at 25% 75%, rgba(255, 255, 255, 0.1), transparent);
-            background-size: 200% 200%;
-            animation: move-background 15s linear infinite;
-        }
-
-        @keyframes move-background {
-            from {
-                background-position: 0% 0%;
-            }
-            to {
-                background-position: 200% 200%;
-            }
-        }
     </style>
 </head>
 <body class="bg-astorre-blue text-white min-h-screen flex flex-col items-center">
-
-    <!-- Animated background container -->
-    <div class="animated-background"></div>
 
     <!-- Main content container, centered and responsive -->
     <main class="flex-grow flex flex-col items-center justify-center text-center max-w-2xl w-full relative z-10 p-4 sm:p-8">
 
         <!-- Logo Placeholder with the added animation class -->
-        <div class="mb-12 w-[266px] h-[100px] mx-auto flex items-center justify-center">
-            <img src="assets/logo.svg" alt="Astorre Logo" class="w-full h-full object-contain animate-pulse-logo" />
+        <div class="mb-16 w-[266px] h-[100px] mx-auto flex items-center justify-center">
+            <img src="assets/image.png" alt="Astorre Logo" class="w-full h-full object-contain animate-pulse-logo" />
         </div>
 
         <!-- Text content -->
@@ -100,7 +62,7 @@
             </p>
 
             <!-- "Coming Soon" text in regular font -->
-            <p class="text-xl sm:text-3xl font-normal text-white opacity-0 transition-opacity duration-1000 mt-12" id="coming-soon-text">
+            <p class="text-sm sm:text-base font-normal text-white opacity-0 transition-opacity duration-1000 mt-12" id="coming-soon-text">
                 Our full website is coming soon.
             </p>
 
@@ -114,7 +76,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="mt-auto text-center text-sm opacity-60">
+    <footer class="mt-auto text-center text-sm opacity-60 pb-4">
         &copy; 2025 Astorre. All rights reserved.
     </footer>
 
