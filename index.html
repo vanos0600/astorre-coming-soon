@@ -10,12 +10,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
-       
+        /*
+         * The user specified a corporate blue from Figma.
+         */
         :root {
             --astorre-blue: #2C52FE;
         }
         body {
-            
+            /* The user requested the Leelawadee font. This is a system font,
+             * so we include it here with a fallback in case it's not available. */
             font-family: 'Leelawadee', 'Inter', sans-serif;
         }
         .bg-astorre-blue {
@@ -63,18 +66,17 @@
                 Our full website is coming soon.
             </p>
         </div>
+        
+        <!-- Contact block moved to main content area -->
+        <div class="mt-16 pt-4 border-t border-white border-opacity-30">
+            <p class="mb-2 text-sm opacity-80">
+                Contact us: <a href="mailto:m.shulga@astorre.tech" class="underline hover:opacity-100 transition-opacity duration-300">m.shulga@astorre.tech</a>
+            </p>
+        </div>
     </main>
 
-    <!-- Footer with contact line and separating border -->
+    <!-- Footer with only the copyright line -->
     <footer class="mt-auto text-center text-sm opacity-60 pb-4 w-full">
-        <!-- Separating line moved to footer -->
-        <div class="pt-4 border-t border-white border-opacity-30 mb-4 mx-auto max-w-2xl"></div>
-        
-        <!-- Contact block moved to footer, only email is clickable and underlined -->
-        <p class="mb-2 text-sm opacity-80">
-            Contact us: <a href="mailto:m.shulga@astorre.tech" class="underline hover:opacity-100 transition-opacity duration-300">m.shulga@astorre.tech</a>
-        </p>
-        
         &copy; 2025 Astorre. All rights reserved.
     </footer>
 
