@@ -4,20 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astorre - Coming Soon</title>
+    <!-- Use Tailwind CSS for rapid styling and responsiveness -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /*
-         * The user specified a corporate blue from Figma.
-         */
+       
         :root {
             --astorre-blue: #2C52FE;
         }
         body {
-            /* The user requested the Leelawadee font. This is a system font,
-             * so we include it here with a fallback in case it's not available. */
+            
             font-family: 'Leelawadee', 'Inter', sans-serif;
         }
         .bg-astorre-blue {
@@ -41,30 +39,39 @@
 </head>
 <body class="bg-astorre-blue text-white min-h-screen flex flex-col items-center">
 
+    <!-- Main content container, centered and responsive -->
     <main class="flex-grow flex flex-col items-center justify-center text-center max-w-2xl w-full relative z-10 p-4 sm:p-8">
 
+        <!-- Logo Placeholder with the added animation class -->
         <div class="mb-16 w-[266px] h-[100px] mx-auto flex items-center justify-center">
             <img src="assets/logo.svg" alt="Astorre Logo" class="w-full h-full object-contain animate-pulse-logo" />
         </div>
 
+        <!-- Text content -->
         <div class="space-y-4 sm:space-y-6">
+            <!-- Headline in all caps and bold -->
             <h2 class="text-xl sm:text-2xl font-bold uppercase leading-tight">
-                FROM DELIVERY TO SHELF — FULLY ALIGNED BY AI
+                FROM DELIVERY TO SHELF — FULLY CONNECTED BY AI
             </h2>
+            <!-- Subheading in regular font -->
             <p class="text-sm sm:text-base opacity-80 font-normal">
                 Astorre combines predictive staffing, AI task orchestration, piece-rate pay, and real-time monitoring into one operational layer — giving UK retailers visibility, control, and consistently full shelves.
             </p>
 
+            <!-- "Coming Soon" text in regular font -->
             <p class="text-sm sm:text-base font-normal opacity-80 transition-opacity duration-1000 mt-12" id="coming-soon-text">
                 Our full website is coming soon.
             </p>
         </div>
     </main>
 
+    <!-- Footer with contact line and separating border -->
     <footer class="mt-auto text-center text-sm opacity-60 pb-4 w-full">
+        <!-- Separating line moved to footer -->
         <div class="pt-4 border-t border-white border-opacity-30 mb-4 mx-auto max-w-2xl"></div>
         
-        <p class="mb-2">
+        <!-- Contact block moved to footer, only email is clickable and underlined -->
+        <p class="mb-2 text-sm opacity-80">
             Contact us: <a href="mailto:m.shulga@astorre.tech" class="underline hover:opacity-100 transition-opacity duration-300">m.shulga@astorre.tech</a>
         </p>
         
